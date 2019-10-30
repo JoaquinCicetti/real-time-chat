@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/real-time-chat/static/css/main.f5b22775.chunk.css",
+    "main.js": "/real-time-chat/static/js/main.601e7e66.chunk.js",
+    "main.js.map": "/real-time-chat/static/js/main.601e7e66.chunk.js.map",
+    "runtime-main.js": "/real-time-chat/static/js/runtime-main.850404a0.js",
+    "runtime-main.js.map": "/real-time-chat/static/js/runtime-main.850404a0.js.map",
+    "static/js/2.add6b047.chunk.js": "/real-time-chat/static/js/2.add6b047.chunk.js",
+    "static/js/2.add6b047.chunk.js.map": "/real-time-chat/static/js/2.add6b047.chunk.js.map",
+    "index.html": "/real-time-chat/index.html",
+    "precache-manifest.d5989cc44365960688ac156db6eda537.js": "/real-time-chat/precache-manifest.d5989cc44365960688ac156db6eda537.js",
+    "service-worker.js": "/real-time-chat/service-worker.js",
+    "static/css/main.f5b22775.chunk.css.map": "/real-time-chat/static/css/main.f5b22775.chunk.css.map",
+    "static/media/index.scss": "/real-time-chat/static/media/Exo2.0-Light.6521d7ea.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.850404a0.js",
+    "static/js/2.add6b047.chunk.js",
+    "static/css/main.f5b22775.chunk.css",
+    "static/js/main.601e7e66.chunk.js"
+  ]
+}
