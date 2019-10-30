@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/real-time-chat/static/css/main.9e676383.chunk.css",
-    "main.js": "/real-time-chat/static/js/main.25fd75d0.chunk.js",
-    "main.js.map": "/real-time-chat/static/js/main.25fd75d0.chunk.js.map",
+    "main.js": "/real-time-chat/static/js/main.40f94a55.chunk.js",
+    "main.js.map": "/real-time-chat/static/js/main.40f94a55.chunk.js.map",
     "runtime-main.js": "/real-time-chat/static/js/runtime-main.850404a0.js",
     "runtime-main.js.map": "/real-time-chat/static/js/runtime-main.850404a0.js.map",
     "static/js/2.5d819785.chunk.js": "/real-time-chat/static/js/2.5d819785.chunk.js",
     "static/js/2.5d819785.chunk.js.map": "/real-time-chat/static/js/2.5d819785.chunk.js.map",
     "index.html": "/real-time-chat/index.html",
-    "precache-manifest.dddad6cadd9993d0853e73925acee2ef.js": "/real-time-chat/precache-manifest.dddad6cadd9993d0853e73925acee2ef.js",
+    "precache-manifest.ed5267e44a0889baa4dfb567da46eb77.js": "/real-time-chat/precache-manifest.ed5267e44a0889baa4dfb567da46eb77.js",
     "service-worker.js": "/real-time-chat/service-worker.js",
     "static/css/main.9e676383.chunk.css.map": "/real-time-chat/static/css/main.9e676383.chunk.css.map",
     "static/media/index.scss": "/real-time-chat/static/media/Exo2.0-Light.6521d7ea.otf"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.850404a0.js",
     "static/js/2.5d819785.chunk.js",
     "static/css/main.9e676383.chunk.css",
-    "static/js/main.25fd75d0.chunk.js"
+    "static/js/main.40f94a55.chunk.js"
   ]
 }
