@@ -1,0 +1,116 @@
+@import '../../themify.scss';
+@import '../../theme.scss';
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0.5em 0;
+    z-index: 2;
+    .message.own {
+        align-items: flex-end;
+    }
+    .dummy {
+        float: left;
+        clear: both;
+    }
+
+    .message {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        ul{
+            overflow-x: hidden;
+        }
+        .content {
+            position: relative;
+            display: flex;
+            width: fit-content;
+            max-width: 64%;
+            min-width: 120px;
+            border-radius: 4px;
+            padding: 0.5em;
+            margin: 2px 0;
+            justify-content: flex-start;
+            flex-direction: column;
+            cursor: pointer;
+            &:focus,
+            &:active {
+                outline: none;
+            }
+            &::after {
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 1.5em;
+                line-height: 3em;
+                top: -2px;
+                left: -2px;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                border-radius: 4px;
+                opacity: 0.9;
+            }
+            @include themify($themes) {
+                background-color: themed('alternativeBackgroundColor');
+                color: themed('textColor');
+                border: 1px solid themed('borderColor');
+            }
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 0.5em;
+                @include themify($themes) {
+                    border-bottom: 1px solid themed('borderColor');
+                }
+                .user {
+                    font-size: 0.8em;
+                    text-transform: capitalize;
+                    margin: 0;
+                    padding: 0;
+                    font-weight: bold;
+                }
+                .date {
+                    font-size: 0.6em;
+                }
+            }
+            .isAnImage {
+                width: 200px;
+                max-height: 420px;
+                object-fit: cover;
+                border-radius: 4px;
+                @include themify($themes) {
+                    background-color: themed('alternativeBackgroundColor');
+                    color: themed('textColor');
+                    border: 1px solid themed('borderColor');
+                }
+            }
+            .body {
+                padding: 0.5em 0 0;
+            }
+        }
+    }
+    .message.selected {
+        z-index: 1;
+
+        .content {
+            &::after {
+                content: 'x';
+                @include themify($themes) {
+                    background: themed('alternativeBackgroundColor');
+                    color: themed('primaryColor');
+                }
+            }
+            .isAnImage {
+                width: 100%;
+                max-width: 420px;
+                z-index: 9999999999;
+            }
+        }
+    }
+}

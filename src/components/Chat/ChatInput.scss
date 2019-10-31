@@ -1,0 +1,61 @@
+@import '../../themify.scss';
+@import '../../theme.scss';
+
+.chatInput {
+    box-sizing: border-box;
+    text-align: center;
+    position: sticky;
+    width: 100%;
+    margin: auto;
+    padding: 0.5em 0;
+    @include themify($themes) {
+        color: themed('textColor');
+    }
+    input {
+        z-index: 0;
+        box-sizing: border-box;
+        padding: 0 1em;
+        font-size: 1em;
+        height: 42px;
+        border-radius: 1.5em;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        outline-width: 0;
+        transition: color $animationTime ease, background-color $animationTime ease,
+            border-color $animationTime ease;
+        @include themify($themes) {
+            background-color: themed('alternativeBackgroundColor');
+            color: themed('textColor');
+            border: 1px solid themed('borderColor');
+        }
+        &:active,
+        &:focus {
+            @include themify($themes) {
+                border-color: themed('primaryColor');
+            }
+        }
+    }
+    .sendButton {
+        background: none;
+        border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        border: none;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        margin: auto;
+        &:hover {
+            @include themify($themes) {
+                background: themed('borderColor');
+            }
+        }
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+$animationTime: 0.24s;
+$primaryColor: #e74c3c;
+$themes: (
+    light: (
+        backgroundColor: #eaeaea,
+        alternativeBackgroundColor: #f6f6f6,
+        textColor: #484848,
+        borderColor: #e8e8e8,
+        shadowColor: #cecece,
+        primaryColor: $primaryColor,
+        lightPrimaryColor: #e74c3c55,
+    ),
+    dark: (
+        backgroundColor: #444,
+        alternativeBackgroundColor: #282828,
+        textColor: #eee,
+        borderColor: #555,
+        shadowColor: #dedede,
+        primaryColor: $primaryColor,
+        lightPrimaryColor: #e74c3c55,
+    ),
+);

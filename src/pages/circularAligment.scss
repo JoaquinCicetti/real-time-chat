@@ -1,0 +1,34 @@
+@mixin on-circle($item-count, $item-size, $radius) {
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+    > a {
+        box-sizing: border-box;
+        border: solid 1px tomato;
+        background: #00000020;
+        border-radius: 40%;
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        width: $item-size * 1%;
+        height: $item-size * 1%;
+        //margin: -($item-size / 2);
+        $angle: (90 / $item-count);
+        $rot: 0;
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                @if $i == 1 {
+                    display: none;
+                }
+                transform: rotate($rot * 1deg)
+                    translate(-$radius * (100 / $item-size))
+                    rotate($rot * -1deg);
+            }
+            $rot: $rot + $angle;
+        }
+        &:hover {
+            background: #00000033;
+        }
+    }
+}

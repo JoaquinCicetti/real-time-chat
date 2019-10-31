@@ -1,0 +1,151 @@
+@import '../../themify.scss';
+@import '../../theme.scss';
+
+.container {
+    height: 900px;
+    max-width: 420px;
+    width: 100%;
+    margin: auto;
+    padding: 0.5em;
+    position: relative;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    transition: background-color $animationTime ease;
+    overflow-y: hidden;
+    border-radius: 24px;
+
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('backgroundColor');
+    }
+    .welcome {
+        margin: 2em 0.5em 0em;
+        .title {
+            margin-bottom: 0;
+        }
+    }
+    .divider {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .hr {
+            height: 0px;
+            margin: 0 0.5em 0 0;
+            border-style: solid;
+            border-width: 1px 0 0 0;
+            flex: 1;
+            @include themify($themes) {
+                border-color: themed('primaryColor');
+            }
+        }
+        .link {
+            width: fit-content;
+            height: fit-content;
+            padding: 1em;
+            border-radius: 50%;
+            margin: auto;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                @include themify($themes) {
+                    background-color: themed('lightPrimaryColor');
+                }
+            }
+            &:active,
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .notch {
+        top: 0;
+        left: 50%;
+        width: 200px;
+        height: 32px;
+        transform: translateX(-50%);
+        z-index: 1;
+        border-radius: 0 0 16px 16px;
+        background-color: $primaryColor;
+        position: absolute;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -16 * 1px;
+            width: 16 * 2px;
+            height: 16 * 1px;
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+            background-image: radial-gradient(
+                circle at 0 100%,
+                transparent 16 - 1px,
+                $primaryColor 16 * 1px
+            );
+        }
+
+        &::after {
+            left: 100%;
+            margin-right: corner-sizepx;
+            background-image: radial-gradient(
+                circle at 100% 100%,
+                transparent 16 - 1px,
+                $primaryColor 16 * 1px
+            );
+        }
+    }
+    .footer {
+        display: flex;
+        flex: 1;
+        max-height: 64px;
+        padding: 0.5em 0 0;
+    }
+    .routerContainer {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+ul,
+li,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+*::-webkit-scrollbar {
+    width: 2px;
+}
+*::-webkit-scrollbar-thumb {
+    @include themify($themes) {
+        background-color: themed('primaryColor');
+    }
+}
+.theme-dark,
+.theme-light {
+    background-color: $primaryColor;
+    display: flex;
+    height: 100vh;
+}
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        height: calc(100vh - 24px);
+        border-radius: 0;
+        .welcome {
+            margin: 2em 0.5em 0;
+            .title {
+                margin: 0.5em 0 0;
+            }
+        }
+    }
+    .notch {
+        display: none;
+    }
+}

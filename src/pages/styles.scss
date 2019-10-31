@@ -1,0 +1,109 @@
+@import '../themify.scss';
+@import '../theme.scss';
+@import './circularAligment.scss';
+
+.test {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .circle-container-primary {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        .container-up {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            .container-left-up {
+                transform: scale(.65,.80) rotate(0deg) translate(30%, -5%);
+                @include on-circle($item-count: 6, $item-size: 20, $radius: 100%);
+            }
+            .container-right-up {
+                transform: scale(.65,.80) rotateY(180deg) translate(30%, -5%);
+                @include on-circle($item-count: 6, $item-size: 20, $radius: 100%);
+            }
+        }
+        .container-down {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            transform:rotateX(180deg) translate(0, -10%);
+            .container-left-down {
+                transform: scale(.76,.75) rotate(0deg) translate(22%, 0);
+                @include on-circle($item-count: 6, $item-size: 20, $radius: 90%);
+            }
+            .container-right-down {
+                transform: scale(.76,.75) rotateY(180deg) translate(22%, 0);
+                @include on-circle($item-count: 6, $item-size: 20, $radius: 90%);
+            }
+        }
+    }
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    .intro {
+        padding: 0 0.5em;
+        .name {
+            text-transform: capitalize;
+            font-size: 1.05em;
+            font-weight: bold;
+        }
+    }
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    .about {
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0;
+        .appName {
+            font-size: 1.3em;
+            @include themify($themes) {
+                color: themed('primaryColor');
+            }
+        }
+        .version {
+            line-height: 20px;
+            margin: 0;
+        }
+        a.version {
+            text-decoration: none;
+            @include themify($themes) {
+                color: themed('primaryColor');
+            }
+        }
+        hr {
+            margin: 1em 0;
+            width: 100%;
+            transition: border-color $animationTime ease;
+            border-width: 1px 0 0 0;
+            @include themify($themes) {
+                border-top: 1px solid themed('primaryColor');
+            }
+        }
+        .repo {
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .chat {
+        .welcome {
+            margin: 1em auto 0.5em;
+        }
+    }
+}
